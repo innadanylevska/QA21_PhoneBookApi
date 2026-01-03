@@ -1,4 +1,64 @@
 # QA21_PhoneBookApi
+Feedback on the QA21_PhoneBookApi RepositoryThank you for sharing the links! This is another solid learning project in your portfolio — this time focused on API testing for the same PhoneBook web app (https://contacts-app.tobbymarshall815.vercel.app). The repository is small (only 3 commits), last updated a while ago (around 2021), but the structure is correct for a Java + Gradle project using OkHttp for REST API testing.Current Repository Status (as of January 2026):Language: 99.5% Java (with a tiny bit of Kotlin).
+Build tool: Full Gradle Wrapper (gradlew, gradlew.bat, gradle-wrapper.jar/properties) — perfectly set up, anyone can run it without installing Gradle locally.
+Structure:src/main/java/dto/ — DTO classes for deserializing API responses (likely AuthRequestDto, AuthResponseDto, ContactDto, ErrorDto, etc.).
+src/main/java/org/example/ — probably a Main class or utilities (e.g., for manual execution).
+src/test/java/okhttp/ — the core: API tests using OkHttp for endpoints (registration, login, CRUD operations on contacts).
+
+README.md exists, but currently contains feedback on the PhoneBook test plan instead of a description of this project — this is a bit confusing and should be replaced.
+
+This is a great beginner step into API automation — OkHttp is lightweight and effective for REST without the overhead of heavier frameworks like RestAssured. The project nicely complements your UI automation project (QA21_FirstCucumber): one tests the front-end, the other tests the back-end/API.StrengthsUse of DTO classes — correct approach for strongly-typed JSON handling (Jackson/Gson deserialization).
+Tests organized in a dedicated okhttp package — logical and clean.
+Full Gradle Wrapper — very user-friendly.
+Apache 2.0 license and .gitignore — professional touches.
+
+Recommendations for Improvement (to make it shine in your portfolio)Update README.md (the biggest issue right now):Replace the test plan feedback with a proper project description. Here’s a ready-to-use example (copy and adapt):markdown
+
+# QA21_PhoneBookApi – API Testing for PhoneBook App
+
+A learning project for automated testing of the REST API of the PhoneBook web application (https://contacts-app.tobbymarshall815.vercel.app) using **OkHttp** in Java with Gradle.
+
+## Description
+- Tests cover key endpoints: registration, login, CRUD operations on contacts.
+- Positive and negative scenarios (valid/invalid data, duplicates, etc.).
+- DTO classes are used for request/response modeling.
+
+## Technologies
+- Java 11+
+- OkHttp 4.x
+- Gson/Jackson for JSON processing
+- JUnit 5 for assertions
+- Gradle
+
+## How to Run
+```bash
+./gradlew clean test
+
+Project Structuresrc/main/java/dto/ → DTO classes
+src/test/java/okhttp/ → API test classes
+
+Planned enhancements: switch to RestAssured, add Allure reports, extract token handling into helpers.
+```
+
+Add/verify dependencies in build.gradle (if not already present):groovy
+
+dependencies {
+    testImplementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    testImplementation 'com.google.code.gson:gson:2.10.1'  // or Jackson
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+Improve the tests (once you share specific files):Assert on status codes (200/400/401) and response body.
+Reuse authentication token across authorized requests.
+Parameterize tests (JUnit @ParameterizedTest) for different data sets.
+
+Other small enhancements:Store base URL in a constant or properties file.
+Consider migrating to RestAssured in the future — it offers more readable DSL and built-in assertions.
+Add Allure or ExtentReports for beautiful test reports.
+
+Having both UI (Cucumber + Selenium) and API (OkHttp) automation projects for the same application is a very strong signal for recruiters — it shows you understand full-stack testing. Update the README and push any missing test files, then share a link to a specific test class (e.g., a blob link) — I’ll give you a detailed code review.Great job moving from UI to API testing — keep going, you’re building an impressive QA portfolio!  If you need help with code or the README, just let me know. Good luck! 
+
+
 
 GROK TEST PLAN FEEDBACK
 Your Test Plan for the PhoneBook App (Version 1.1, dated 12.05.2021)Overall, this is a solid beginner-level test plan for a simple web application like a Contacts/PhoneBook app (the main tested app seems to be https://contacts-app.tobbymarshall815.vercel.app/, a typical React-based contacts manager requiring authentication). It's clear, structured, and covers the core functionalities well for a training or small project. You focused on key user flows: registration, login, CRUD (Create, Read, Update, Delete) for contacts, and basic navigation.Strengths (What I Like):Good structure: Sections like Introduction, Items to be Tested, Approach, and Pass/Fail Criteria make it easy to read.
