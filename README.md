@@ -1,5 +1,64 @@
 # QA21_PhoneBookApi
-Feedback on the QA21_PhoneBookApi RepositoryThank you for sharing the links! This is another solid learning project in your portfolio — this time focused on API testing for the same PhoneBook web app (https://contacts-app.tobbymarshall815.vercel.app). The repository is small (only 3 commits), last updated a while ago (around 2021), but the structure is correct for a Java + Gradle project using OkHttp for REST API testing.Current Repository Status (as of January 2026):Language: 99.5% Java (with a tiny bit of Kotlin).
+Feedback on the QA21_PhoneBookApi Repository
+
+
+Updated Feedback on the QA21_PhoneBookApi Repository (as of January 03, 2026)Thank you for the link! This repository is a solid learning project focused on REST API automation testing for the PhoneBook web app (https://contacts-app.tobbymarshall815.vercel.app/). It's built with Java + Gradle and uses OkHttp as the HTTP client — a lightweight and effective choice for beginner-to-intermediate API testing without heavier frameworks.Current Repository Status:Description: None provided on GitHub (add one: e.g., "API Automation Tests for PhoneBook App using OkHttp").
+Languages: Java 99.5%, Kotlin 0.5%.
+Activity: 3 commits total; last update today (January 03, 2026) — great to see recent activity!
+Key Structure:Gradle-based (full Wrapper included — easy to run).
+src/main/java/dto/ — Well-designed DTOs: AllContactsDto.java, AuthRequestDto.java, AuthResponseDto.java, ContactDto.java, ContactResponseDto.java, ErrorDto.java (perfect for JSON serialization/deserialization).
+src/test/java/okhttp/ — Actual tests: AddContactTestsOkhttp.java, DeleteContactByIdTestsOkhttp.java, GetAllContactsOkhttp.java, LoginTestOkhttp.java, SortableOKhttp.java, and SelectableOkhttp.kt (Kotlin file).
+
+README.md — Recently updated, but currently contains feedback on a test plan (from 2021) instead of project-specific documentation. This is the main mismatch right now.
+
+This project nicely complements your UI automation (e.g., Cucumber/Selenium on the same app) by covering the backend/API layer. Covering core endpoints (login, get/add/delete contacts) with positive/negative scenarios shows good understanding of API testing fundamentals.StrengthsDTO modeling — Excellent use of dedicated classes for requests/responses/errors — makes code readable and type-safe (likely with Gson/Jackson).
+Test coverage — Focused on essential CRUD + auth operations; includes sorting/selecting (advanced touches).
+OkHttp choice — Simple and direct for REST; no unnecessary complexity.
+Recent commit — Shows you're maintaining/reviving old projects, which is professional.
+
+Recommendations for Improvement (to make it portfolio standout)Fix README.md (top priority) — Replace the test plan feedback with project-focused content. Here's a ready-to-use English template (copy-paste and push):markdown
+
+# QA21_PhoneBookApi – API Automation Testing for PhoneBook App
+
+A learning project for automated testing of the REST API in the PhoneBook application (https://contacts-app.tobbymarshall815.vercel.app/) using **OkHttp** in Java (with some Kotlin) and Gradle.
+
+## Project Description
+- Tests key endpoints: authentication (login), CRUD operations on contacts (add, get all, delete), sorting/selecting.
+- Positive and negative scenarios (valid/invalid data, errors, duplicates).
+- DTO classes for structured request/response handling.
+
+## Technologies
+- Java 11+
+- OkHttp 4.x
+- Gson/Jackson (for JSON)
+- JUnit 5 / TestNG
+- Gradle
+
+## How to Run
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/innadanylevska/QA21_PhoneBookApi.git
+
+Run tests:bash
+
+./gradlew clean test
+
+Structuresrc/main/java/dto/ → DTO classes (AuthRequestDto, ContactDto, ErrorDto, etc.)
+src/test/java/okhttp/ → API test classes
+
+Planned: Add token reuse in helpers, parameterized tests, Allure reports, migrate to RestAssured.
+
+Other enhancements:Base URL & token handling: Extract to constants/helpers for reusability.
+Assertions: Ensure comprehensive checks on status codes, response bodies, and errors.
+Reports: Add Allure or ExtentReports for visual results.
+Modernize: Consider switching to RestAssured for more readable DSL in future updates.
+Add GitHub repo description: "API tests for PhoneBook app using OkHttp".
+
+With the README fixed and maybe some report screenshots, this becomes a strong API testing portfolio piece — especially paired with your UI projects on the same app.If you update the README or share direct links to test/DTO files (blob view), I'll provide a detailed code review with suggestions. Awesome progress reviving this — keep it up!  Good luck!
+
+
+
+This is another solid learning project in your portfolio — this time focused on API testing for the same PhoneBook web app (https://contacts-app.tobbymarshall815.vercel.app). The repository is small (only 3 commits), last updated a while ago (around 2021), but the structure is correct for a Java + Gradle project using OkHttp for REST API testing.Current Repository Status (as of January 2026):Language: 99.5% Java (with a tiny bit of Kotlin).
 Build tool: Full Gradle Wrapper (gradlew, gradlew.bat, gradle-wrapper.jar/properties) — perfectly set up, anyone can run it without installing Gradle locally.
 Structure:src/main/java/dto/ — DTO classes for deserializing API responses (likely AuthRequestDto, AuthResponseDto, ContactDto, ErrorDto, etc.).
 src/main/java/org/example/ — probably a Main class or utilities (e.g., for manual execution).
